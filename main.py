@@ -1,6 +1,6 @@
 def file_read(file_name):
     cook_book = {}
-    with open(file_name, 'rt') as recipes:
+    with open(file_name, 'rt', encoding='ansi') as recipes:
         keys_list = ['ingredient_name', 'quantity', 'measure']
         for line in recipes:
             cook_book[line.strip().title()] = []
@@ -15,7 +15,7 @@ def file_read(file_name):
 
 
 def file_write(file_name, dish_name, ingredients_count, ingredients_list):
-    with open(file_name, 'at') as recipes:
+    with open(file_name, 'at', encoding='ansi') as recipes:
         recipes.write(dish_name + '\n' + str(ingredients_count) + '\n')
         for ingredient in ingredients_list:
             recipes.write(ingredient + '\n')
